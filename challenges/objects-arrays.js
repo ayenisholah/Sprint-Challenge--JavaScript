@@ -38,27 +38,31 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 {"id":9,"first_name":"Michail","university":"Universidad Católica de Ávila","email":"mrome8@shinystat.com"},
 {"id":10,"first_name":"Hube","university":"Universitat Rovira I Virgili Tarragona","email":"hlethbrig9@foxnews.com"}]
 
-/* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
-Once you have the new array created, sort the universities alphabetically and log the result. */
+// Request 1: Create a new array called universities that contains all the universities in the graduates array.  
+// Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
 graduates.forEach(function(element){
   let uni_list = element.university;
   universities.push(uni_list);
-})
+});
 console.log(universities.sort());
 
-/* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
+// Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 const contactInfo = [];
 graduates.forEach(function(element){
   let Info = `${element.first_name} ${element.email}`;
   contactInfo.push(Info);
-})
+});
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
-console.log(uni);
+// const uni = [];
+// graduates.filter(function(element){
+//   let alpha = (element.university == 'uni');
+//   uni.push(alpha);
+// });
+// console.log(uni);
 
 
 // ==== ADVANCED Array Methods ====
@@ -77,12 +81,15 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 {"animal_name":"Hawk-eagle, crowned","population":10,"scientific_name":"Spizaetus coronatus","state":"Florida"},
 {"animal_name":"Australian pelican","population":5,"scientific_name":"Pelecanus conspicillatus","state":"West Virginia"}];
 
-/* Request 1: .forEach()
+// Request 1: .forEach()
 
-The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
+// The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
-*/
 const animalNames = [];
+zooAnimals.forEach(function(element){
+  let alpha = `${element.animal_name} ${element.scientific_name}`;
+  animalNames.push(alpha)
+})
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -92,6 +99,10 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
+zooAnimals.map(function(element){
+  let alpha = element.animal_name.toLowerCase();
+  lowerCase.push(alpha)
+})
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
