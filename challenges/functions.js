@@ -26,10 +26,9 @@ function multiply(x,y) {
   return x * y;
 }
 
-function greeting(x,y) {
+function greeting (x,y) {
   return `Hello ${x} ${y}, nice to meet you!`
 }
-
 
 consume(2,2,add); // 4
 consume(10,16,multiply); // 160

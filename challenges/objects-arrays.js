@@ -41,16 +41,13 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 // Request 1: Create a new array called universities that contains all the universities in the graduates array.  
 // Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-graduates.forEach(function(element){
-  let uni_list = element.university;
-  universities.push(uni_list);
-});
+graduates.forEach(element => {let uni_list = element.university; 
+  universities.push(uni_list);});
 console.log(universities.sort());
 
 // Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 const contactInfo = [];
-graduates.forEach(function(element){
-  let Info = `${element.first_name} ${element.email}`;
+graduates.forEach(element => {let Info = `${element.first_name} ${element.email}`;
   contactInfo.push(Info);
 });
 console.log(contactInfo);
@@ -58,8 +55,7 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
-let filter_uni = graduates.includes(function(element){
-  return element.university === 'Uni';
+let filter_uni = graduates.filter(element => {return (element.university === 'Uni');
 });
 uni.push(filter_uni)
 
@@ -87,8 +83,7 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 // The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 const animalNames = [];
-zooAnimals.forEach(function(element){
-  let alpha = `${element.animal_name} ${element.scientific_name}`;
+zooAnimals.forEach(element => {let alpha = `${element.animal_name} ${element.scientific_name}`;
   animalNames.push(alpha)
 })
 console.log(animalNames);
@@ -100,10 +95,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
-zooAnimals.map(function(element){
-  let alpha = element.animal_name.toLowerCase();
+zooAnimals.map(element => { let alpha = element.animal_name.toLowerCase();
   lowerCase.push(alpha)
-})
+});
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -112,8 +106,7 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 const largerPopulation = [];
-let filter_animal = zooAnimals.filter(function(element){
-  return element.population < 5;
+let filter_animal = zooAnimals.filter(element => { return element.population < 5;
 });
 largerPopulation.push(filter_animal)
 console.log(largerPopulation);
